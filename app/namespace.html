@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>test123</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<script type="text/javascript" src="js/app.js"></script>
+	    <!--<script type="text/javascript" src="js/fnctn.js"></script>-->
+</head>
+<body>
+  <p id="myLog"></p>
+
+<script>
+//"use strict";
+window.console = {
+  log: function(str){
+    var node = document.createElement("div");
+    node.appendChild(document.createTextNode(str));
+    document.getElementById("myLog").appendChild(node);
+  }
+}
+
+try{
+
+console.log("https://javascriptweblog.wordpress.com/2010/12/07/namespacing-in-javascript/");
+console.log("NAMESPACE.html");
+
+    var obj={};
+    obj.id=0;
+    obj.reset=function(){
+          obj.id=0;
+          return this.id;
+    };
+    obj.add=function(){
+          return this.id++;
+    };
+    console.log(obj.id);
+    console.log(obj.add());
+    //console.log(obj.reset());
+
+    var test=obj;
+    var test1=obj.add;
+
+    console.log(test.add());
+    console.log(test.add());
+    console.log(obj.id);
+    console.log(test1());
+
+    var modularObj=(function() {
+ 
+        var id= 0;
+        //alert("indise");
+
+        var next=function() {
+                return "out side next" ; 
+        };
+
+        return {
+            varid:0,
+            next: function() {
+                return id++;    
+            },
+     
+            reset: function() {
+                id = 0;     
+            },
+            getId: function() {
+                return id;     
+            }
+        };  
+    })();
+    
+    console.log("------");
+
+    //console.log(modularObj.getId());
+    console.log(modularObj.next());
+   // console.log(modularObj.next());
+    console.log(modularObj.id);
+   // console.log(modularObj.reset());
+    // console.log(modularObj.getId());
+   // var x=modularObj;
+   // x.id=100;
+  //  console.log(modularObj.id);
+  //  console.log(x.id);
+   // console.log(modularObj.getId());
+
+    console.log(0.1 + 0.2 == 0.3);
+
+}catch(e){
+    console.log("error---"+e);
+
+}
+
+</script>
+
+</body>
+</html>

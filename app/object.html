@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>test123</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<script type="text/javascript" src="js/app.js"></script>
+	    <!--<script type="text/javascript" src="js/fnctn.js"></script>-->
+</head>
+<body>
+  <p id="myLog"></p>
+
+<script>
+"use strict";
+window.console = {
+  log: function(str){
+    var node = document.createElement("div");
+    node.appendChild(document.createTextNode(str));
+    document.getElementById("myLog").appendChild(node);
+  }
+}
+
+try{
+
+console.log("Object.html");
+
+var person = {};
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+person.fullname = function(){ return this.firstName+' '+this.lastName};
+
+var x=person;
+x.age=10;
+
+person.fullnameText = x.fullname();
+
+console.log("person.eyeColor---"+x.fullname());
+console.log("person.eyeColor---"+person.age);
+console.log("person.eyeColor---"+person.fullnameText);
+var test=x.fullname;
+
+console.log("person.eyeColor---"+x.fullname);
+console.log("person.eyeColor---"+typeof test);
+
+function Person(name){
+  this.name=name;
+  this.testFunc=function(){
+    var newObj=new Person('testinner');
+    return console.log(this.name=newObj.name);
+  }
+}
+
+var var1=new Person("test");
+var var2=new Person("test");
+
+Person.prototype.first=1;
+console.log("person="+var1.testFunc());
+console.log("person---"+Person.name);
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 == 0.3);
+
+}catch(e){
+    console.log("error---"+e);
+
+}
+
+
+
+</script>
+
+</body>
+</html>

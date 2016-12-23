@@ -1,0 +1,172 @@
+<html>
+<head>
+	<title>test123</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<script type="text/javascript" src="js/app.js"></script>
+	    <!--<script type="text/javascript" src="js/fnctn.js"></script>-->
+</head>
+<body>
+  <p id="myLog"></p>
+
+<script>
+//"use strict";
+window.console = {
+  log: function(str){
+    var node = document.createElement("div");
+    node.appendChild(document.createTextNode(str));
+    document.getElementById("myLog").appendChild(node);
+  }
+}
+
+try{
+
+console.log("https://javascriptweblog.wordpress.com/2010/12/07/namespacing-in-javascript/");
+console.log("SAMPLE.html");
+
+function spinWords(str){
+  //TODO Have fun :)
+  
+  var listWord=str.split(" "),i=0;
+  var strLength=listWord.length;
+  
+  while( i < strLength){
+    if(listWord[i].length >=5){
+           listWord[i]=getReversed(listWord[i]);
+    }
+    i++;
+  }
+  
+  return listWord.join(" ");
+  
+}
+
+function getReversed(str){
+  
+  var strreverse="",i=0;
+  while(i < str.length){
+    strreverse=str[i]+strreverse;
+    i++;
+  }
+  console.log(strreverse);
+  return str.split("").reverse().join("");
+  
+}
+
+console.log(spinWords("Hey fellow warriors"));
+
+var vowels=['a','e'];
+var str="aAk";
+vowels.forEach(function(val){
+      
+    console.log( new RegExp(val, 'gi'));
+    str=str.replace(new RegExp(val, 'gi'),"");
+})
+console.log(str);
+
+function solution(N) {
+    // write your code in JavaScript (Node.js 6.4.0)
+    
+    var booleanarray=Number(N).toString(2).split("");
+    var gap=0,lasFound=0;
+    booleanarray.forEach(function(value,index){
+        if(value==1){
+            gap= (gap < index - lasFound) ? index- lasFound : gap;   
+            lasFound=index;
+
+        }
+                    
+        });
+    return gap-1;   
+}
+
+    console.log(solution(1041));
+
+function solution(A, K) {
+    var newArray=[];
+    while(K < 0){
+       
+
+        K--;
+    }
+}
+var A=[1,2,3];
+
+function DNAStrand(dna){
+  var reple={'A':'T','T':'A','C':'G','G':'C'}
+  var str="";
+  var stringArray=dna.split("");
+  stringArray.forEach(function(vale,index){
+       str+=reple[vale];
+  });
+  
+  return str;
+}
+
+console.log(DNAStrand('AAA'));
+
+
+function findOutlier(integers){
+  //your code here
+  var isDdd=0;
+  var isEven=0;
+  for(var i=0;i<3;i++){
+    integers[i]%2==0 ? isEven++:isDdd++;
+  }
+  
+  var returnNo=function(N){
+  	return N%2==0;
+  }
+  var isEven=(isEven > isDdd) ? true : false;
+ if(isEven){
+ 	  returnNo=function(N){
+  	return !(N%2==0);
+  };
+ }
+  
+  for(i=0;i<integers.length;i++){
+         if(returnNo(integers[i])){
+            return integers[i];
+         }
+  }
+  
+}
+
+function findOutlier1(int){
+  var even = int.filter(a=>a%2==0);
+  var odd = int.filter(a=>a%2!==0);
+  return even.length==1? even[0] : odd[0];
+}
+
+findOutlier1([0, 1, 2]);
+
+
+function solution1(A) {
+    // write your code in JavaScript (Node.js 6.4.0)
+    A=A.sort();
+    console.log(A);
+    var i=1,temp=A.length;
+    while(i <= A.length){
+        
+        if(A[i]==A[i-1]){
+            A.splice(i-1,1);
+            A.splice(i-1,1);
+            i=0;
+        }   
+
+        i++;
+    }
+    
+    return A[0];
+}
+
+solution1([9, 3, 9, 3, 9, 7, 9]);
+
+}catch(e){
+    console.log("error---"+e);
+
+}
+
+</script>
+
+</body>
+</html>

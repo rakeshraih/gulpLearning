@@ -1,0 +1,120 @@
+<html>
+<head>
+	<title>test123</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<script type="text/javascript" src="js/app.js"></script>
+	    <!--<script type="text/javascript" src="js/fnctn.js"></script>-->
+</head>
+<body>
+  <p id="myLog"></p>
+
+<script>
+//"use strict";
+window.console = {
+  log: function(str){
+    var node = document.createElement("div");
+    node.appendChild(document.createTextNode(str));
+    document.getElementById("myLog").appendChild(node);
+  }
+}
+
+try{
+    var b;
+    var a=b=3;
+    var bar=null;
+    var fun=function test(){};
+    console.log(typeof bar==='object')
+    console.log(toString.call(bar)); 
+    console.log(typeof bar === "object");  // logs true!
+    console.log(Boolean(10 >> 9));
+    console.log(typeof fun)
+    var str=new String();
+    var str=undefined
+    console.log(typeof str);
+    //console.log(str.constructor);
+
+var fruits = ["1", "11", "111", "01"];
+//fruits[0]=function test(){};
+//fruits.push(function test(){});
+
+//fruits[5]=fruits[1];
+
+fruits.sort(function(a, b){return  b-1});
+    console.log(fruits);
+    fruits.sort();
+    console.log(fruits);
+fruits.reverse(); 
+    console.log(fruits);
+//var fruits = new Array();
+    console.log(typeof fruits);
+    console.log(fruits instanceof Array);
+    
+   function testss(){
+    x=123;
+    }
+     
+
+}catch(e){
+    console.log("error---"+e);
+
+}
+
+console.log("------------------------------------");
+
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+    this.testFn=function(){
+        return 11111;
+    }
+}
+
+var t=new Person(1,2,3,4);
+var r=new Person(5,6,7,8);
+
+
+t.firstName=0;
+
+console.log(t.firstName);
+console.log(r.testFn());
+
+Person.prototype.testName="Rak";
+
+console.log(t.testName);
+console.log("------test---------");
+(function(){
+  var a = b = 3;
+})();
+console.log(a);
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+
+
+var myObject = {
+    foo: "bar",
+    func: function() {
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo);
+        console.log("outer func:  self.foo = " + self.foo);
+        (function() {
+            console.log("inner func:  this.foo = " + this.foo);
+            console.log("inner func:  self.foo = " + self.foo);
+        }());
+    }
+};
+myObject.func();
+
+var match, indexes= [];
+while (match= "10010101".exec(1))
+    indexes.push([match.index, match.index+match[0].length]);
+
+console.log("binary--"+indexes);
+
+
+
+</script>
+
+</body>
+</html>

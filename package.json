@@ -1,0 +1,24 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "my project",
+  "main": "yes",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "not yet"
+  },
+  "keywords": [
+    "hi"
+  ],
+  "author": "rakesh",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-util": "^3.0.7"
+  }
+}
